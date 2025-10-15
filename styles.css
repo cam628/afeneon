@@ -465,19 +465,19 @@ body {
 .linkedin-btn {
     display: inline-block;
     padding: 16px 40px;
-    background: #0077b5;
+    background: var(--primary-color);
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
+    box-shadow: 0 4px 15px rgba(26, 77, 46, 0.2);
 }
 
 .linkedin-btn:hover {
-    background: #005885;
+    background: var(--secondary-color);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
+    box-shadow: 0 6px 20px rgba(26, 77, 46, 0.3);
 }
 
 /* Footer */
