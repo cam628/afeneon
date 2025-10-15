@@ -54,11 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
     
-    // Homepage expertise cards stay visible (no animation)
+    // Homepage expertise cards stay visible and fixed (no animation, no scroll effects)
     const expertiseCards = document.querySelectorAll('.expertise .expertise-card');
     expertiseCards.forEach(card => {
         card.style.opacity = '1';
         card.style.transform = 'translateY(0)';
+        card.style.transition = 'none'; // Disable any transitions
     });
 });
 
@@ -210,4 +211,18 @@ function toggleAccordion(accordionId) {
     if (accordion) {
         accordion.classList.toggle('active');
     }
+}
+
+// Open an accordion by id and scroll to it
+function openAccordionAndScroll(accordionId) {
+    const accordion = document.getElementById(accordionId);
+    if (!accordion) return;
+
+    // Ensure it is active/open
+    if (!accordion.classList.contains('active')) {
+        accordion.classList.add('active');
+    }
+
+    // Smooth scroll into view
+    accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
