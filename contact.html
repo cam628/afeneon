@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Alain Fénéon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button onclick="switchLanguage('en')" class="lang-btn active" id="lang-en">EN</button>
+        <button onclick="switchLanguage('fr')" class="lang-btn" id="lang-fr">FR</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand" style="text-decoration: none; color: var(--primary-color);">Alain Fénéon</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="career.html" data-en="Career" data-fr="Carrière">Career</a></li>
+                <li><a href="publications.html" data-en="Publications" data-fr="Publications">Publications</a></li>
+                <li><a href="contact.html" class="active" data-en="Contact" data-fr="Contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 data-en="Get in Touch" data-fr="Contactez-moi">Get in Touch</h1>
+            <p data-en="Contact for legal consultation, arbitration, or publishing inquiries" data-fr="Contact pour consultation juridique, arbitrage ou demandes d'édition">Contact for legal consultation, arbitration, or publishing inquiries</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="contact-form">
+                <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 2rem;" data-en="Send a Message" data-fr="Envoyer un Message">Send a Message</h2>
+                
+                <form id="contactForm" action="https://formspree.io/f/manpabee" method="POST" onsubmit="return handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name" data-en="Name *" data-fr="Nom *">Name *</label>
+                        <input type="text" id="name" name="name" required data-en="Your full name" data-fr="Votre nom complet">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-en="Email *" data-fr="Email *">Email *</label>
+                        <input type="email" id="email" name="email" required data-en="your@email.com" data-fr="votre@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" data-en="Subject *" data-fr="Sujet *">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" data-en="Select a subject" data-fr="Sélectionner un sujet">Select a subject</option>
+                            <option value="legal" data-en="Legal Consultation" data-fr="Consultation Juridique">Legal Consultation</option>
+                            <option value="arbitration" data-en="Arbitration / Mediation" data-fr="Arbitrage / Médiation">Arbitration / Mediation</option>
+                            <option value="publishing" data-en="Publishing Inquiry" data-fr="Demande d'Édition">Publishing Inquiry</option>
+                            <option value="other" data-en="Other" data-fr="Autre">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" data-en="Message *" data-fr="Message *">Message *</label>
+                        <textarea id="message" name="message" required data-en="Your message..." data-fr="Votre message..."></textarea>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="submit-btn" data-en="Send Message" data-fr="Envoyer le Message">Send Message</button>
+                    </div>
+                </form>
+
+                <div id="formMessage" style="margin-top: 2rem; padding: 1rem; border-radius: 8px; display: none;"></div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="content-section" style="margin-top: 5rem;">
+                <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 2rem;" data-en="Professional Network" data-fr="Réseau Professionnel">Professional Network</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-card clickable-card" style="text-align: center; cursor: pointer;" onclick="window.location.href='mailto:jurisafrica@yahoo.fr'">
+                        <div class="card-icon">📧</div>
+                        <h3 data-en="Email" data-fr="Email">Email</h3>
+                        <p data-en="For professional inquiries and consultation requests" data-fr="Pour demandes professionnelles et consultations">For professional inquiries and consultation requests</p>
+                        <p style="color: var(--primary-color); font-weight: 600; margin-top: 0.5rem;">jurisafrica@yahoo.fr</p>
+                    </div>
+                    <div class="expertise-card clickable-card" style="text-align: center; cursor: pointer;" onclick="window.open('https://fr.linkedin.com/in/alain-feneon', '_blank')">
+                        <div class="card-icon">🌐</div>
+                        <h3 data-en="LinkedIn" data-fr="LinkedIn">LinkedIn</h3>
+                        <p data-en="Connect for professional networking and updates" data-fr="Connectez-vous pour réseautage professionnel et mises à jour">Connect for professional networking and updates</p>
+                    </div>
+                    <div class="expertise-card clickable-card" style="text-align: center; cursor: pointer;" onclick="window.open('https://editions-jurisafrica-dju7.vercel.app/', '_blank')">
+                        <div class="card-icon">📚</div>
+                        <h3 data-en="Publications" data-fr="Publications">Publications</h3>
+                        <p data-en="Éditions JurisAfrica - Legal publishing inquiries" data-fr="Éditions JurisAfrica - Demandes d'édition juridique">Éditions JurisAfrica - Legal publishing inquiries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Alain Fénéon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
